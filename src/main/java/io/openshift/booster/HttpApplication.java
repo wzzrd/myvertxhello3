@@ -18,8 +18,8 @@ public class HttpApplication extends AbstractVerticle {
     Router router = Router.router(vertx);
 
     router.get("/api/greeting").handler(this::greeting);
-    router.get("/*").handler(StaticHandler.create());
     router.get("/api/goodbye").handler(this::goodbye);
+    router.get("/*").handler(StaticHandler.create());
 
     // Create the HTTP server and pass the "accept" method to the request handler.
     vertx
